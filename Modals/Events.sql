@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS EVENTS (
+    Id INT PRIMARY KEY AUTO_INCREMENT,
+    Title VARCHAR(255)
+);
+
+
+INSERT INTO EVENTS (Title) VALUES ("Camp with the stars...");
+INSERT INTO EVENTS (Title) VALUES ("Summer marathon");
+INSERT INTO EVENTS (Title) VALUES ("Hack Google");
+INSERT INTO EVENTS (Title) VALUES ("CSGO champions league");
