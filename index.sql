@@ -69,3 +69,36 @@
     --     WHERE Title = "Making Money Online"
     -- );
 
+
+
+-- GET ALL THE EVENTS TITLES HOSTED BY A USER GIVEN HIS ID;
+    -- SELECT Title
+    -- FROM EVENTS
+    -- WHERE Id IN (
+    --     SELECT event_id
+    --     FROM EVENTS_USERS
+    --     WHERE hoster_id = 1
+    -- );
+
+
+-- GET ALL THE EVENTS TITLES ALONG SIDE THIER HOSTERS DETAILS GIVEN A HOSTER ID;
+
+    -- SELECT E.Title, H.Username, H.Email
+    -- FROM EVENTS AS E,
+    --     USER AS H,
+    --     EVENTS_USERS
+    -- WHERE EVENTS_USERS.hoster_id = H.id AND EVENTS_USERS.event_id = E.id;
+
+
+
+-- GET ALL THE EVENTS TITLES ALONG SIDE THIER HOSTERS DETAILS AND THEIR PHONE NUMBER GIVEN A HOSTER ID;
+
+SELECT E.Title,
+     H.Username AS "Hoster",
+     H.Email AS "Hoster_email",
+     C.Phone AS "Hoster_phone"
+FROM EVENTS AS E ,
+    USER AS H ,
+    CONTACT_INFO AS C ,
+    EVENTS_USERS
+WHERE EVENTS_USERS.event_id = E.Id AND EVENTS_USERS.hoster_id = H.id AND C.Owner_Id = H.id;
